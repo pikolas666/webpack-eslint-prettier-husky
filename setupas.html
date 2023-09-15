@@ -1,0 +1,44 @@
+[10:17] Robertas Ankudovičius
+
+1.
+
+npm install --save-dev prettier eslint-config-prettier eslint-plugin-prettier
+
+[10:18] Robertas Ankudovičius
+
+2.
+
+.eslintrc.js --> extends --> "plugin:prettier/recommended",
+
+[10:25] Robertas Ankudovičius
+
+PRECOMMIT LINT
+
+[10:25] Robertas Ankudovičius
+
+1.
+
+npm install eslint prettier husky lint-staged --save-dev
+
+[10:25] Robertas Ankudovičius
+
+2.
+
+npx husky install
+
+[10:26] Robertas Ankudovičius
+
+3.
+
+npx husky add .husky/pre-commit "npx lint-staged"
+
+// to pre-commit file in huskey add
+
+////////////////////////////////////////////
+
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npm run lint
+
+////////////////////////////////////////////
